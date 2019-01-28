@@ -1,1 +1,2 @@
-# exp8
+# jpacman
+Orginal code for JPacman

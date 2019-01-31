@@ -18,15 +18,15 @@ public class Tile {
 	
 	/**
 	 * Create a new tile for the given location.
-	 * @param x horizontal coordinate
-	 * @param y vertical coordinate
+	 * @param xField horizontal coordinate
+	 * @param yField vertical coordinate
 	 */
-	public Tile(int x, int y) {
-		this.x = x;
-		this.y = y;
+	public Tile(final int xField, final int yField) {
+		this.x = xField;
+		this.y = yField;
 		sprites = new ArrayDeque<Sprite>();
 	}
-	
+
 	/**
 	 * Any sprite on this tile should have its location
 	 * set so that it indeed points to this tile.

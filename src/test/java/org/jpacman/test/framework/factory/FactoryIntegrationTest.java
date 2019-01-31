@@ -14,24 +14,40 @@ import org.junit.Test;
 
 public class FactoryIntegrationTest {
 
-	MapParser parser;
+    /**
+     * nice var.
+     */
+    private static final int VAR3 = 3;
+    /**
+     * ok.
+     */
+	private MapParser parser;
+	/**
+	 * something.
+	 */
+	private String[] map = new String[] {"#####", "#...#", "#GPG#", "#   #",
+			"#####"};
 
-	private String[] map = new String[] { "#####", "#...#", "#GPG#", "#   #",
-			"#####" };
-
+	/**
+	 * test.
+	 */
 	@Before
 	public void setUp() {
 		IGameFactory factory = new DefaultGameFactory();
 		parser = new MapParser(factory);
 	}
 
+	/**
+	 * throw the exception!
+	 * @throws FactoryException always
+	 */
 	@Test
 	public void testFullMap() throws FactoryException {
 		Game g = parser.parseMap(map);
 		Board b = g.getBoard();
 
 		// did we recognize the right sprites?
-		assertEquals(SpriteType.EMPTY, b.spriteTypeAt(1, 3));
+		assertEquals(SpriteType.EMPTY, b.spriteTypeAt(1, VAR3));
 		assertEquals(SpriteType.PLAYER, b.spriteTypeAt(2, 2));
 		assertEquals(SpriteType.GHOST, b.spriteTypeAt(1, 2));
 		assertEquals(SpriteType.WALL, b.spriteTypeAt(0, 0));
